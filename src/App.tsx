@@ -7,6 +7,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Index from "./pages/Index";
 import Trips from "./pages/Trips";
+import DestinationRegions from "./pages/DestinationRegions";
 import TripDetail from "./pages/TripDetail";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
@@ -28,6 +29,7 @@ const App = () => (
             <Routes>
               <Route path="/" element={<Index />} />
               <Route path="/trips" element={<Trips />} />
+              <Route path="/destinations" element={<DestinationRegions />} />
               <Route path="/trips/:id" element={<TripDetail />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />

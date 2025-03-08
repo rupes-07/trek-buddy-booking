@@ -57,7 +57,7 @@ const Navbar = () => {
                   <DropdownMenu>
                     <DropdownMenuTrigger 
                       className={`flex items-center text-gray-700 hover:text-nepal-blue transition-colors ${
-                        isActive('/trips') ? 'text-nepal-blue font-medium' : ''
+                        isActive('/trips') || isActive('/destinations') ? 'text-nepal-blue font-medium' : ''
                       }`}
                     >
                       Destinations <ChevronDown className="ml-1 h-4 w-4" />
@@ -152,6 +152,28 @@ const Navbar = () => {
               onClick={toggleMenu}
             >
               All Trips
+            </Link>
+            <Link
+              to="/trips?region=everest"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/trips') && window.location.search.includes('region=everest')
+                  ? 'text-nepal-blue bg-nepal-blue/10' 
+                  : 'text-gray-700 hover:text-nepal-blue hover:bg-gray-50'
+              }`}
+              onClick={toggleMenu}
+            >
+              Everest Region
+            </Link>
+            <Link
+              to="/trips?region=annapurna"
+              className={`block px-3 py-2 rounded-md text-base font-medium ${
+                isActive('/trips') && window.location.search.includes('region=annapurna')
+                  ? 'text-nepal-blue bg-nepal-blue/10' 
+                  : 'text-gray-700 hover:text-nepal-blue hover:bg-gray-50'
+              }`}
+              onClick={toggleMenu}
+            >
+              Annapurna Region
             </Link>
             <Link
               to="/about"
