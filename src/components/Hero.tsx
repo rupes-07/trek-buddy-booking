@@ -4,8 +4,6 @@ import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { ArrowRight } from 'lucide-react';
 
-<lov-add-dependency>framer-motion@latest</lov-add-dependency>
-
 const Hero = () => {
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
