@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -14,6 +15,10 @@ export default {
 			center: true,
 			padding: '2rem',
 			screens: {
+				'sm': '640px',
+				'md': '768px',
+				'lg': '1024px',
+				'xl': '1280px',
 				'2xl': '1400px'
 			}
 		},
@@ -52,16 +57,14 @@ export default {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
 				},
-				sidebar: {
-					DEFAULT: 'hsl(var(--sidebar-background))',
-					foreground: 'hsl(var(--sidebar-foreground))',
-					primary: 'hsl(var(--sidebar-primary))',
-					'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-					accent: 'hsl(var(--sidebar-accent))',
-					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-					border: 'hsl(var(--sidebar-border))',
-					ring: 'hsl(var(--sidebar-ring))'
-				}
+				// Nepal Prayer Flag colors
+				nepal: {
+					blue: '#0E76BC',     // Blue - Sky
+					white: '#FFFFFF',    // White - Clouds/Snow
+					red: '#E31E24',      // Red - Fire
+					green: '#009444',    // Green - Nature
+					yellow: '#FFF200',   // Yellow - Earth
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -70,26 +73,53 @@ export default {
 			},
 			keyframes: {
 				'accordion-down': {
-					from: {
-						height: '0'
-					},
-					to: {
-						height: 'var(--radix-accordion-content-height)'
-					}
+					from: { height: '0' },
+					to: { height: 'var(--radix-accordion-content-height)' },
 				},
 				'accordion-up': {
-					from: {
-						height: 'var(--radix-accordion-content-height)'
-					},
-					to: {
-						height: '0'
-					}
-				}
+					from: { height: 'var(--radix-accordion-content-height)' },
+					to: { height: '0' },
+				},
+				'fade-in': {
+					from: { opacity: '0', transform: 'translateY(10px)' },
+					to: { opacity: '1', transform: 'translateY(0)' },
+				},
+				'fade-in-up': {
+					from: { opacity: '0', transform: 'translateY(20px)' },
+					to: { opacity: '1', transform: 'translateY(0)' },
+				},
+				'image-scale': {
+					from: { transform: 'scale(1.05)' },
+					to: { transform: 'scale(1)' },
+				},
+				'blur-in': {
+					from: { opacity: '0', filter: 'blur(5px)' },
+					to: { opacity: '1', filter: 'blur(0)' },
+				},
+				'text-reveal': {
+					from: { transform: 'translateY(100%)' },
+					to: { transform: 'translateY(0)' },
+				},
+				'slide-in-right': {
+					from: { transform: 'translateX(20px)', opacity: '0' },
+					to: { transform: 'translateX(0)', opacity: '1' },
+				},
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
-			}
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'fade-in': 'fade-in 0.6s ease-out',
+				'fade-in-up': 'fade-in-up 0.8s ease-out',
+				'image-scale': 'image-scale 8s ease-out',
+				'blur-in': 'blur-in 0.6s ease-out',
+				'text-reveal': 'text-reveal 0.5s ease-out',
+				'slide-in-right': 'slide-in-right 0.4s ease-out',
+			},
+			backgroundImage: {
+				'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
+				'mountains': "url('/src/assets/backgrounds/mountains.jpg')",
+				'texture': "url('/src/assets/backgrounds/texture.png')",
+			},
 		}
 	},
 	plugins: [require("tailwindcss-animate")],
